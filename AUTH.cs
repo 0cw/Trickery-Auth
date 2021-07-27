@@ -22,22 +22,13 @@ namespace TrickeryAUTH
                 {
                     response = true;
                 }
-                else if (get.Contains("\"status\": \"error\","))
-                {
-                    response = false;
-                }
-                else
-                {
-                    response = false;
-                }
                 return response;
             }
         }
 
         public static string GetRawJSON(string AuthKey)
         {
-            bool repsonse = Login(AuthKey);
-            if (repsonse == true)
+            if (Login(AuthKey))
             {
                 using (var request = new HttpRequest())
                 {
@@ -53,8 +44,7 @@ namespace TrickeryAUTH
 
         public static string GetUsername(string AuthKey)
         {
-            bool repsonse = Login(AuthKey);
-            if (repsonse == true)
+            if (Login(AuthKey))
             {
                 using (var request = new HttpRequest())
                 {
@@ -71,8 +61,7 @@ namespace TrickeryAUTH
 
         public static string GetUserID(string AuthKey)
         {
-            bool repsonse = Login(AuthKey);
-            if (repsonse == true)
+            if (Login(AuthKey))
             {
                 using (var request = new HttpRequest())
                 {
@@ -89,8 +78,7 @@ namespace TrickeryAUTH
 
         public static string GetUserEmail(string AuthKey)
         {
-            bool repsonse = Login(AuthKey);
-            if (repsonse == true)
+            if (Login(AuthKey))
             {
                 using (var request = new HttpRequest())
                 {
@@ -106,8 +94,7 @@ namespace TrickeryAUTH
         }
         public static string GetRegistrationDate(string AuthKey)
         {
-            bool repsonse = Login(AuthKey);
-            if (repsonse == true)
+            if (Login(AuthKey))
             {
                 using (var request = new HttpRequest())
                 {
