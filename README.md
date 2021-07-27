@@ -13,7 +13,6 @@
 
 <p align="center">
 <a href="">
-<img src="./images/demo.png" width="600" height="350"/>
 </a>
 </p>
 <p align="center">
