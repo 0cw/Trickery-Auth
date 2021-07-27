@@ -22,14 +22,6 @@ namespace TrickeryAUTH
                 {
                     response = true;
                 }
-                else if (get.Contains("\"status\": \"error\","))
-                {
-                    response = false;
-                }
-                else
-                {
-                    response = false;
-                }
                 return response;
             }
         }
