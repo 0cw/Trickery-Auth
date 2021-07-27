@@ -1,0 +1,9 @@
+C:\Users\quano\Desktop\TrickeryAUTH\TrickeryAUTH\bin\Debug\TrickeryAUTH.dll
+C:\Users\quano\Desktop\TrickeryAUTH\TrickeryAUTH\bin\Debug\TrickeryAUTH.pdb
+C:\Users\quano\Desktop\TrickeryAUTH\TrickeryAUTH\bin\Debug\Leaf.xNet.dll
+C:\Users\quano\Desktop\TrickeryAUTH\TrickeryAUTH\bin\Debug\Leaf.xNet.xml
+C:\Users\quano\Desktop\TrickeryAUTH\TrickeryAUTH\obj\Debug\TrickeryAUTH.csproj.AssemblyReference.cache
+C:\Users\quano\Desktop\TrickeryAUTH\TrickeryAUTH\obj\Debug\TrickeryAUTH.csproj.CoreCompileInputs.cache
+C:\Users\quano\Desktop\TrickeryAUTH\TrickeryAUTH\obj\Debug\TrickeryAUTH.csproj.CopyComplete
+C:\Users\quano\Desktop\TrickeryAUTH\TrickeryAUTH\obj\Debug\TrickeryAUTH.dll
+C:\Users\quano\Desktop\TrickeryAUTH\TrickeryAUTH\obj\Debug\TrickeryAUTH.pdb
