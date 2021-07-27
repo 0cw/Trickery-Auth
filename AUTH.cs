@@ -10,7 +10,7 @@ namespace TrickeryAUTH
 {
     public class AUTH
     {
-
+        private static string AuthResponse = "";
         //poopcode
         public static bool Login(string AuthKey)
         {
@@ -20,15 +20,8 @@ namespace TrickeryAUTH
                 string get = request.Get("https://trickery.to/forum/tapi/index.php?users/me&oauth_token=" + AuthKey).ToString();
                 if (get.Contains("user"))
                 {
+                    AuthResponse = get;
                     response = true;
-                }
-                else if (get.Contains("\"status\": \"error\","))
-                {
-                    response = false;
-                }
-                else
-                {
-                    response = false;
                 }
                 return response;
             }
@@ -37,13 +30,9 @@ namespace TrickeryAUTH
         public static string GetRawJSON(string AuthKey)
         {
             bool repsonse = Login(AuthKey);
-            if (repsonse == true)
+            if (Login(AuthKey))
             {
-                using (var request = new HttpRequest())
-                {
-                    string get = request.Get("https://trickery.to/forum/tapi/index.php?users/me&oauth_token=" + AuthKey).ToString();
-                    return get;
-                }
+                return AuthResponse;
             }
             else
             {
@@ -58,8 +47,7 @@ namespace TrickeryAUTH
             {
                 using (var request = new HttpRequest())
                 {
-                    string get = request.Get("https://trickery.to/forum/tapi/index.php?users/me&oauth_token=" + AuthKey).ToString();
-                    string Username = Parse(get, "\"username\": \"", "\",");
+                    string Username = Parse(AuthResponse, "\"username\": \"", "\",");
                     return Username;
                 }
             }
@@ -76,8 +64,7 @@ namespace TrickeryAUTH
             {
                 using (var request = new HttpRequest())
                 {
-                    string get = request.Get("https://trickery.to/forum/tapi/index.php?users/me&oauth_token=" + AuthKey).ToString();
-                    string UID = Parse(get, "\"user_id\": ", ",");
+                    string UID = Parse(AuthResponse, "\"user_id\": ", ",");
                     return UID;
                 }
             }
@@ -94,8 +81,7 @@ namespace TrickeryAUTH
             {
                 using (var request = new HttpRequest())
                 {
-                    string get = request.Get("https://trickery.to/forum/tapi/index.php?users/me&oauth_token=" + AuthKey).ToString();
-                    string UID = Parse(get, "\"user_email\": \"", "\",");
+                    string UID = Parse(AuthResponse, "\"user_email\": \"", "\",");
                     return UID;
                 }
             }
@@ -111,8 +97,7 @@ namespace TrickeryAUTH
             {
                 using (var request = new HttpRequest())
                 {
-                    string get = request.Get("https://trickery.to/forum/tapi/index.php?users/me&oauth_token=" + AuthKey).ToString();
-                    string timestampstring = Parse(get, "\"user_register_date\": ", ",");
+                    string timestampstring = Parse(AuthResponse, "\"user_register_date\": ", ",");
                     double timestamp = double.Parse(timestampstring);
                     DateTime time = UnixTimeStampToDateTime(timestamp);
                     string time2 = time.ToString("dd/MM/yyyy");
